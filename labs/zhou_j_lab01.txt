@@ -1,0 +1,290 @@
+Lab 1
+
+Question 2
+/******************************************************/
+/*Lab 1 Question 2                                    */
+/*Name:       Jin Zhou                                */
+/*Student ID: 1091825                                 */
+/*Date:       9/16/2021                               */
+/*This Program obtains two integers from              */
+/*the user and prints the sum, product,               */
+/*difference, quotient and remainder of two numbers   */
+/*                                                    */
+/******************************************************/
+
+
+#include<stdio.h>
+
+void main()
+{
+  //Declaration
+  int a;
+  int b;
+
+  //data/input
+  printf("Enter two numbers: ");
+  scanf("%d%d",&a,&b);
+
+  //processing & output
+  printf("The sum is %d\n", a+b);
+  printf("The product is %d\n", a*b);
+  printf("The difference is %d\n",a-b);
+  printf("The quotient is %d\n",a/b);
+  printf("The remainder is %d\n",a%b);
+
+  return 0;
+}
+
+/*
+Test run 1
+Enter two numbers: 20 5
+The sum is 25
+The product is 100
+The difference is 15
+The quotient is 4
+The remainder is 0
+
+Test run 2
+Enter two numbers: 5 20
+The sum is 25
+The product is 100
+The difference is -15
+The quotient is 0
+The remainder is 5
+
+Test run 3
+Enter two numbers: 7 8
+The sum is 15
+The product is 56
+The difference is -1
+The quotient is 0
+The remainder is 7
+*/
+
+Lab 1 Question3
+/******************************************************/
+/*Lab 1 Question 3                                    */
+/*Name:       Jin Zhou                                */
+/*Student ID: 1091825                                 */
+/*Date:       9/16/2021                               */
+/*This Program obtains one 5-digit number from        */
+/*the user, then separates and prints the number      */
+/*into its individual digits                          */
+/*                                                    */
+/******************************************************/
+
+
+#include<stdio.h>
+
+void main()
+{
+  //Declaration
+  int num,digit1,digit2,digit3,digit4,digit5;
+
+  //data/input
+  printf("Enter a number: ");
+  scanf("%d",&num);
+
+  //processing
+  digit5 = num%10;
+  digit4 = (num%100)/10;
+  digit3 = (num%1000)/100;
+  digit2 = (num%10000)/1000;
+  digit1 = num/10000;
+
+  //output
+  printf("%d %d %d %d %d\n", digit1, digit2, digit3, digit4, digit5);
+
+  return 0;
+}
+
+/*
+Test run 1
+Enter a number: 41239
+4 1 2 3 9
+
+Test run 2
+Enter a number: 85243
+8 5 2 4 3
+
+Test run 3
+Enter a number: 34980
+3 4 9 8 0
+*/
+
+
+Lab 1 Question 4
+/******************************************************/
+/*Lab 1 Question 4                                    */
+/*Name:       Jin Zhou                                */
+/*Student ID: 1091825                                 */
+/*Date:       9/16/2021                               */
+/*This Program obtains radius of a circle             */
+/*from the user then finds the area and               */
+/*circumference of this circle                        */
+/*                                                    */
+/******************************************************/
+
+
+#include<stdio.h>
+#define PI 3.14159
+
+int main()
+{
+  //Declaration
+  float radius;
+  float area, diameter,circum;
+
+  //data/input
+  printf("The radius of the circle is: ");
+  scanf("%f",&radius);
+
+  //processing
+  area = 3.14159 * radius * radius;
+  diameter = 2 * radius;
+  circum = 3.14159 * diameter;
+
+  //output
+  printf("The diameter of the circle is %0.5f\n", diameter);
+  printf("The area of the circle is %0.5f\n", area);
+  printf("The circumference is %0.5f\n", circum);
+
+  return 0;
+}
+
+/*
+Test run 1
+The radius of the circle is: 5
+The diameter of the circle is 10.00000
+The area of the circle is 78.53975
+The circumference is 31.41590
+
+Test run 2
+The radius of the circle is: 6
+The diameter of the circle is 12.00000
+The area of the circle is 113.09724
+The circumference is 37.69908
+
+Test run 3
+The radius of the circle is: 10
+The diameter of the circle is 20.00000
+The area of the circle is 314.15900
+The circumference is 62.83180
+
+*/
+
+Lab 1 Question 5
+/******************************************************/
+/*Lab 1 Question 5                                    */
+/*Name:       Jin Zhou                                */
+/*Student ID: 1091825                                 */
+/*Date:       9/16/2021                               */
+/*This Program finds the sum of two fractions         */
+/*where input by the user.                             */
+/*                                                    */
+/******************************************************/
+
+
+#include<stdio.h>
+
+int main()
+{
+  //Declaration
+  int n1, d1;
+  int n2, d2;
+  int sn, sd;
+
+  //data/input
+  printf("Enter First fraction : ");
+  scanf("%d/%d",&n1,&d1);
+  printf("Enter Second fraction : ");
+  scanf("%d/%d",&n2,&d2);
+
+  //processing
+  sn = (n1 * d2)+(n2 * d1);
+  sd = d1 * d2;
+
+  //output
+  printf("The sum of the two fractions is %d/%d", sn,sd);
+
+  return 0;
+}
+/*
+Test run 1
+Enter First fraction : 5/6
+Enter Second fraction : 3/4
+The sum of the two fractions is 38/24
+
+Test run 2
+Enter First fraction : 3/8
+Enter Second fraction : 7/9
+The sum of the two fractions is 83/72
+
+Test run 3
+Enter First fraction : 1/5
+Enter Second fraction : 4/5
+The sum of the two fractions is 25/25
+
+*/
+
+Lab 1 Question 6
+/*******************************************************/
+/*Lab 1 Question 6                                     */
+/*Name:       Jin Zhou                                 */
+/*Student ID: 1091825                                  */
+/*Date:       9/16/2021                                */
+/*This Program obtains a US dollar amount from the user*/
+/*then show how to pay that amount using the smallest  */
+/*number of $20, $10, $5, $1 bills                     */
+/*******************************************************/
+
+
+#include<stdio.h>
+
+int main()
+{
+  //Declaration
+  int dlm;
+  int num_of_$20,num_of_$10,num_of_$5,num_of_$1;
+
+  //data/input
+  printf("Enter a dollar amount: ");
+  scanf("%d",&dlm);
+
+  //processing
+  num_of_$20 = dlm/20;
+  num_of_$10 = (dlm%20)/10;
+  num_of_$5 = ((dlm%20)%10)/5;
+  num_of_$1 = (((dlm%20)%10)%5)/1;
+
+  //output
+  printf("$20 bills:%d\n",num_of_$20);
+  printf("$10 bills:%d\n",num_of_$10);
+  printf("$ 5 bills:%d\n",num_of_$5);
+  printf("$ 1 bills:%d\n",num_of_$1);
+
+  return 0;
+}
+
+/*
+Test run 1
+Enter a dollar amount: 93
+$20 bills:4
+$10 bills:1
+$ 5 bills:0
+$ 1 bills:3
+
+Test run 2
+Enter a dollar amount: 115
+$20 bills:5
+$10 bills:1
+$ 5 bills:1
+$ 1 bills:0
+
+Test run 3
+Enter a dollar amount: 86
+$20 bills:4
+$10 bills:0
+$ 5 bills:1
+$ 1 bills:1
+*/

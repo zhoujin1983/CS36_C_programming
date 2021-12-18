@@ -1,0 +1,473 @@
+Lab 2
+
+Question 1
+/*******************************************************/
+/*Lab 2 Question 1                                     */
+/*Name:       Jin Zhou                                 */
+/*Student ID: 1091825                                  */
+/*Date:       9/30/2021                                */
+/*This Program determines whether a person is eligible */
+/*to vote or not                                       */
+/*                                                     */
+/*******************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    //Declaration
+    int age,dif;
+
+    //Data/input
+    printf("Enter the age : ");
+    scanf("%d", &age);
+
+    //Calculation
+    dif = 18 - age;
+
+
+    //if statement and output
+    if (age < 0)
+        printf("Not valid\n");
+    else
+        if (age < 18)
+            printf("You have to wait for another %d years to cast your vote\n", dif);
+        if (age >= 18)
+            printf("You are eligible to cast your vote\n");
+
+    return 0;
+
+}
+/*
+Test run 1
+Enter the age : 10
+You have to wait for another 8 years to cast your vote
+
+Test run 2
+Enter the age : 25
+You are eligible to cast your vote
+
+Test run 3
+Enter the age : -10
+Not valid
+*/
+
+
+Question 2
+/*******************************************************/
+/*Lab 2 Question 2                                     */
+/*Name:       Jin Zhou                                 */
+/*Student ID: 1091825                                  */
+/*Date:       9/30/2021                                */
+/*This Program finds whether the given number is even  */
+/*or odd                                               */
+/*                                                     */
+/*******************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    //Declaration
+    int num;
+
+    //Data/input
+    printf("Enter any number : ");
+    scanf("%d", &num);
+
+    //Calculation
+
+    //if statement and output
+    if (num%2 == 0)
+        printf("%d is even\n",num);
+    else
+        printf("%d is odd\n",num);
+
+    return 0;
+
+}
+/*
+Test run 1
+Enter any number : 125
+125 is odd
+
+Test run 2
+Enter any number : 152
+152 is even
+
+Test run 3
+Enter any number : 6
+6 is even
+*/
+
+
+Question 3
+/*******************************************************/
+/*Lab 2 Question 3                                     */
+/*Name:       Jin Zhou                                 */
+/*Student ID: 1091825                                  */
+/*Date:       9/30/2021                                */
+/*This Program finds whether the given character is a  */
+/*vowel or not                                         */
+/*                                                     */
+/*******************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    //Declaration
+    char letter;
+
+    //Data/input
+    printf("Enter any character : ");
+    scanf("%c", &letter);
+
+    //Calculation
+
+    //if statement and output
+    if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u' || letter == 'A'||
+        letter =='E'|| letter == 'I' || letter =='O' || letter =='U')
+        printf("%c is a vowel\n",letter);
+    else
+        printf("%c is not a vowel\n",letter);
+
+    return 0;
+
+}
+/*
+Test run 1
+Enter any character : h
+h is not a vowel
+
+Test run 2
+Enter any character : i
+i is a vowel
+
+Test run 3
+Enter any character : B
+B is not a vowel
+*/
+
+
+Question 4
+/*******************************************************/
+/*Lab 2 Question 4                                     */
+/*Name:       Jin Zhou                                 */
+/*Student ID: 1091825                                  */
+/*Date:       9/30/2021                                */
+/*This Program checks whether an input is a digit or   */
+/*a character                                          */
+/*                                                     */
+/*******************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    //Declaration
+    char inpt;
+
+    //Data/input
+    printf("Enter any character : ");
+    scanf("%c", &inpt);
+
+    //Calculation
+
+    //if statement and output
+    if (inpt >= '0' && inpt <= '9')
+        printf("A digit was entered");
+    else if (inpt >= 'a' && inpt <= 'z')
+        printf("Lowercase character was entered");
+    else if (inpt >= 'A' && inpt <= 'Z')
+        printf("Uppercase character was entered");
+
+    return 0;
+
+}
+/*
+Test run 1
+Enter any character : C
+Uppercase character was entered
+
+Test run 2
+Enter any character : b
+Lowercase character was entered
+
+Test run 3
+Enter any character : 5
+A digit was entered
+*/
+
+Question 5
+/*******************************************************/
+/*Lab 2 Question 5                                     */
+/*Name:       Jin Zhou                                 */
+/*Student ID: 1091825                                  */
+/*Date:       9/30/2021                                */
+/*This Program finds whether a given year is a leap    */
+/*year or not                                          */
+/*                                                     */
+/*******************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    //Declaration
+    int year;
+
+    //Data/input
+    printf("Enter any year : ");
+    scanf("%d", &year);
+
+    //Calculation
+
+    //if statement and output
+    if (year%4 == 0 && year%100 != 0)
+        printf("Leap Year");
+    else
+        printf("Not a Leap Year");
+
+    return 0;
+
+}
+/*
+Test run 1
+Enter any year : 1964
+Leap Year
+
+Test run 2
+Enter any year : 2200
+Not a Leap Year
+
+Test run 3
+Enter any year : 1836
+Leap Year
+*/
+
+
+Question 6
+/*******************************************************/
+/*Lab 2 Question 6                                     */
+/*Name:       Jin Zhou                                 */
+/*Student ID: 1091825                                  */
+/*Date:       9/30/2021                                */
+/*This Program tests whether a given integer is        */
+/*positive, negative or zero                           */
+/*                                                     */
+/*******************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    //Declaration
+    int num;
+
+    //Data/input
+    printf("Enter any number : ");
+    scanf("%d", &num);
+
+    //Calculation
+
+    //if statement and output
+    if (num > 0 )
+        printf("The number is positive");
+    else if (num < 0)
+        printf("The number is negative");
+    else
+        printf("The number is equal to zero");
+
+    return 0;
+
+}
+/*
+Test run 1
+Enter any number : 0
+The number is equal to zero
+
+Test run 2
+Enter any number : 15
+The number is positive
+
+Test run 3
+Enter any number : -25
+The number is negative
+*/
+
+
+Question 7
+/*******************************************************/
+/*Lab 2 Question 7                                     */
+/*Name:       Jin Zhou                                 */
+/*Student ID: 1091825                                  */
+/*Date:       9/30/2021                                */
+/*This Program determines an entered character is      */
+/*a vowel or not                                       */
+/*                                                     */
+/*******************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    //Declaration
+    char ch;
+
+    //Data/input
+    printf("Enter a character : ");
+    scanf("%c", &ch);
+
+    //Calculation
+
+    //if statement and output
+    switch(ch)
+    {
+        case 'A':
+        case 'a':
+        case 'E':
+        case 'e':
+        case 'i':
+        case 'I':
+        case 'o':
+        case 'O':
+        case 'u':
+        case 'U': printf("%c is a vowel\n", ch);
+            break;
+        default: printf("%c is not a vowel\n", ch);
+        }
+
+    return 0;
+
+}
+/*
+Test run 1
+Enter a character : b
+b is not a vowel
+
+Test run 2
+Enter a character : B
+B is not a vowel
+
+Test run 3
+Enter a character : e
+e is a vowel
+*/
+
+
+
+Question 8
+/*******************************************************/
+/*Lab 2 Question 8                                     */
+/*Name:       Jin Zhou                                 */
+/*Student ID: 1091825                                  */
+/*Date:       9/30/2021                                */
+/*This Program displays the corresponding day of       */
+/*the week according to the entered number             */
+/*                                                     */
+/*******************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    //Declaration
+    int num;
+
+    //Data/input
+    printf("Enter a number between 1 to 7: ");
+    scanf("%d", &num);
+
+    //Calculation
+
+    //if statement and output
+    switch(num)
+    {
+        case 1: printf("You entered %d, that's Monday.\n", num);
+            break;
+        case 2: printf("You entered %d, that's Tuesday.\n", num);
+            break;
+        case 3: printf("You entered %d, that's Wednesday.\n", num);
+            break;
+        case 4: printf("You entered %d, that's Thursday.\n", num);
+            break;
+        case 5: printf("You entered %d, that's Friday.\n", num);
+            break;
+        case 6: printf("You entered %d, that's Saturday.\n", num);
+            break;
+        case 7: printf("You entered %d, that's Sunday.\n", num);
+            break;
+        default: printf("Invalid\n", num);
+        }
+
+    return 0;
+
+}
+/*
+Test run 1
+Enter a number between 1 to 7: 3
+You entered 3, that's Wednesday.
+
+Test run 2
+Enter a number between 1 to 7: 5
+You entered 5, that's Friday.
+
+Test run 3
+Enter a number between 1 to 7: 6
+You entered 6, that's Saturday.
+*/
+
+
+Question 9
+/*******************************************************/
+/*Lab 2 Question 9                                     */
+/*Name:       Jin Zhou                                 */
+/*Student ID: 1091825                                  */
+/*Date:       9/30/2021                                */
+/*This Program decides whether an entered number is odd*/
+/*or even                                              */
+/*                                                     */
+/*******************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    //Declaration
+    int num;
+
+    //Data/input
+    printf("Enter a number between 1 to 10: ");
+    scanf("%d", &num);
+
+    //Calculation
+
+    //if statement and output
+    if (num >= 1 && num <= 10)
+        switch(num%2)
+        {
+            case 0: printf("You entered %d. That is an even number.\n", num);
+                break;
+            case 1: printf("You entered %d. That is an odd number.\n", num);
+                break;
+        }
+    else
+        printf("Number entered is outside the range.\n");
+
+    return 0;
+
+}
+/*
+Test run 1
+Enter a number between 1 to 10: 5
+You entered 5. That is an odd number.
+
+Test run 2
+Enter a number between 1 to 10: 12
+Number entered is outside the range.
+
+Test run 3
+Enter a number between 1 to 10: 8
+You entered 8. That is an even number.
+*/

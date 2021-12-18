@@ -1,0 +1,710 @@
+Lab 3
+
+Question 1
+/********************************************************/
+/*Lab 3 Question 1                                      */
+/*Name:       Jin Zhou                                  */
+/*Student ID: 1091825                                   */
+/*Date:       10/27/2021                                */
+/*This Program calculates the sum of numbers from m to n*/
+/*                                                      */
+/*                                                      */
+/********************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    //Declaration
+    int m,n, sum = 0, i;
+
+    //Data/input
+    printf("Enter the value of m : ");
+    scanf("%d", &m);
+    printf("Enter the value of n : ");
+    scanf("%d",&n);
+    
+    //Processing & output
+    i = m;
+    while(i <= n)
+    {
+        sum += i;
+        i++;
+    }
+    printf("Sum = %d\n", sum);
+
+    return 0;
+
+}
+/*
+Test run 1
+Enter the value of m : 7
+Enter the value of n : 11
+Sum = 45
+
+Test run 2
+Enter the value of m : 4
+Enter the value of n : 8
+Sum = 30
+
+Test run 3
+Enter the value of m : 5
+Enter the value of n : 10
+Sum = 45
+*/
+
+
+Question 2
+/********************************************************/
+/*Lab 3 Question 2                                      */
+/*Name:       Jin Zhou                                  */
+/*Student ID: 1091825                                   */
+/*Date:       10/27/2021                                */
+/*This Program counts the negative, positive and zeros  */
+/*entered by the user                                                      */
+/*                                                      */
+/********************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    //Declaration
+    int n, p_count = 0, n_count = 0, z_count = 0;
+
+    //Data/input
+    printf("Enter any number , -1 to quit : ");
+    scanf("%d", &n);
+
+    //Processing & output
+    while(n != -1)
+    {
+        if (n > 0)
+                p_count++;
+        else if (n < 0 && n != -1)
+                n_count++;
+        else if(n == 0)
+                z_count++;
+
+            printf("Enter any number , -1 to quit : ");
+            scanf("%d", &n);
+
+    }
+        printf("\n");
+        printf("Count of positive numbers entered = %d\n", p_count);
+        printf("Count of negative numbers entered = %d\n", n_count);
+        printf("Count of zeros numbers entered = %d\n", z_count);
+
+    return 0;
+
+}
+/*
+Test run 1
+Enter any number , -1 to quit : -12
+Enter any number , -1 to quit : 108
+Enter any number , -1 to quit : -24
+Enter any number , -1 to quit : 0
+Enter any number , -1 to quit : -23
+Enter any number , -1 to quit : -1
+
+Count of positive numbers entered = 1
+Count of negative numbers entered = 3
+Count of zeros numbers entered = 1
+
+Test run 2
+Enter any number , -1 to quit : -1
+
+Count of positive numbers entered = 0
+Count of negative numbers entered = 0
+Count of zeros numbers entered = 0
+
+Test run 3
+Enter any number , -1 to quit : 7
+Enter any number , -1 to quit : 0
+Enter any number , -1 to quit : 0
+Enter any number , -1 to quit : -45
+Enter any number , -1 to quit : -2
+Enter any number , -1 to quit : 6
+Enter any number , -1 to quit : -1
+
+Count of positive numbers entered = 2
+Count of negative numbers entered = 2
+Count of zeros numbers entered = 2
+*/
+
+Question 3
+/*********************************************************/
+/*Lab 3 Question 3                                       */
+/*Name:       Jin Zhou                                   */
+/*Student ID: 1091825                                    */
+/*Date:       10/27/2021                                 */
+/*This Program counts the number of uppercase, lowercase */
+/*and digits entered by the user until a * is encountered*/
+/*                                                       */
+/*********************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    //Declaration
+    char c;
+    int count_upper = 0, count_lower = 0, count_digits = 0;
+
+    //Data/input
+    printf("Enter any character, or * to quit : ");
+    scanf(" %c", &c);
+
+    //Processing & output
+
+    while(c != '*')
+    {
+        if (c >= 'A' && c <= 'Z')
+                count_upper++;
+        else if (c >= 'a' && c <= 'z')
+                count_lower++;
+        else if(c >= '0' && c <= '9')
+                count_digits++;
+
+        printf("Enter any character, or * to quit : ");
+
+        scanf(" %c", &c);
+    }
+    printf("\n");
+    printf("Count of lowercase characters entered = %d\n", count_lower);
+    printf("Count of uppercase characters entered = %d\n", count_upper);
+    printf("Count of digits entered = %d\n", count_digits);
+
+    return 0;
+
+}
+/*
+Test run 1
+Enter any character, or * to quit : o
+Enter any character, or * to quit : P
+Enter any character, or * to quit : A
+Enter any character, or * to quit : d
+Enter any character, or * to quit : 2
+Enter any character, or * to quit : *
+
+Count of lowercase characters entered = 2
+Count of uppercase characters entered = 2
+Count of digits entered = 1
+
+
+Test run 2
+Enter any character, or * to quit : *
+
+Count of lowercase characters entered = 0
+Count of uppercase characters entered = 0
+Count of digits entered = 0
+
+Test run 3
+Enter any character, or * to quit : 2
+Enter any character, or * to quit : 5
+Enter any character, or * to quit : L
+Enter any character, or * to quit : e
+Enter any character, or * to quit : M
+Enter any character, or * to quit : 9
+Enter any character, or * to quit : *
+
+Count of lowercase characters entered = 1
+Count of uppercase characters entered = 2
+Count of digits entered = 3
+*/
+
+
+Question 4
+/*********************************************************/
+/*Lab 3 Question 4                                       */
+/*Name:       Jin Zhou                                   */
+/*Student ID: 1091825                                    */
+/*Date:       10/27/2021                                 */
+/*This Program calculates the average of first n numbers */
+/*                                                       */
+/*                                                       */
+/*********************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    //Declaration
+    int n, i, sum = 0;
+    float avg;
+
+    //Data/input
+    printf("Enter the value of n : ");
+    scanf("%d", &n);
+
+    //Processing & output
+    i = 1;
+    do
+    {
+       sum += i;
+       i++;
+    }
+    while(i<=n);
+
+    avg = sum / (float)n;
+    printf("The sum of first %d numbers = %d\n",n,sum);
+    printf("The average of first 18 numbers = %.2f\n",avg);
+
+
+    return 0;
+
+}
+/*
+Test run 1
+Enter the value of n : 18
+The sum of first 18 numbers = 171
+The average of first 18 numbers = 9.50
+
+
+Test run 2
+Enter the value of n : 10
+The sum of first 10 numbers = 55
+The average of first 18 numbers = 5.50
+
+Test run 3
+Enter the value of n : 20
+The sum of first 20 numbers = 210
+The average of first 18 numbers = 10.50
+*/
+
+
+Question 5
+/*********************************************************/
+/*Lab 3 Question 5                                       */
+/*Name:       Jin Zhou                                   */
+/*Student ID: 1091825                                    */
+/*Date:       10/27/2021                                 */
+/*This Program calculates the square and cube of first n */
+/*natural numbers                                        */
+/*                                                       */
+/*********************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    //Declaration
+    int n, i, square = 0, cube = 0;
+
+    //Data/input
+    printf("Enter the value of n : ");
+    scanf("%d", &n);
+
+    //Processing & output
+    printf("-------------------------------------------------\n");
+    i = 1;
+    do
+    {
+       square = i*i;
+       cube = i*i*i;
+       printf("|\t%-2d\t|\t%-2d\t|\t%-2d\t|\n",i,square,cube);
+       i++;
+    }
+    while(i<=n);
+
+    printf("-------------------------------------------------\n");
+
+
+    return 0;
+
+}
+/*
+Test run 1
+Enter the value of n : 5
+-------------------------------------------------
+|       1       |       1       |       1       |
+|       2       |       4       |       8       |
+|       3       |       9       |       27      |
+|       4       |       16      |       64      |
+|       5       |       25      |       125     |
+-------------------------------------------------
+
+
+Test run 2
+Enter the value of n : 4
+-------------------------------------------------
+|       1       |       1       |       1       |
+|       2       |       4       |       8       |
+|       3       |       9       |       27      |
+|       4       |       16      |       64      |
+-------------------------------------------------
+
+Test run 3
+Enter the value of n : 10
+-------------------------------------------------
+|       1       |       1       |       1       |
+|       2       |       4       |       8       |
+|       3       |       9       |       27      |
+|       4       |       16      |       64      |
+|       5       |       25      |       125     |
+|       6       |       36      |       216     |
+|       7       |       49      |       343     |
+|       8       |       64      |       512     |
+|       9       |       81      |       729     |
+|       10      |       100     |       1000    |
+-------------------------------------------------
+*/
+
+Question 6
+/*********************************************************/
+/*Lab 3 Question 6                                       */
+/*Name:       Jin Zhou                                   */
+/*Student ID: 1091825                                    */
+/*Date:       10/27/2021                                 */
+/*This Program asks users to input the base size and     */
+/*prints the specific pattern                            */
+/*                                                       */
+/*********************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    //Declaration
+    int base, row,col;
+
+    //Data/input
+    printf("Enter base size of triangle pattern : ");
+    scanf("%d", &base);
+
+    //Processing & output
+    for (row = 0; row <= base; row++){
+        for (col = 1; col < (row + 1); col++)
+            printf("%d",col);
+        printf("\n");
+    }
+
+
+    return 0;
+
+}
+/*
+Test run 1
+Enter base size of triangle pattern : 5
+
+1
+12
+123
+1234
+12345
+
+
+Test run 2
+Enter base size of triangle pattern : 8
+
+1
+12
+123
+1234
+12345
+123456
+1234567
+12345678
+
+Test run 3
+Enter the value of n : 10
+Enter base size of triangle pattern : 10
+
+1
+12
+123
+1234
+12345
+123456
+1234567
+12345678
+123456789
+12345678910
+*/
+
+Question 7
+/*********************************************************/
+/*Lab 3 Question 7                                       */
+/*Name:       Jin Zhou                                   */
+/*Student ID: 1091825                                    */
+/*Date:       10/27/2021                                 */
+/*This Program asks users to input the highest           */
+/*uppercase alphabet prints the specific pattern         */
+/*                                                       */
+/*********************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    //Declaration
+    char ch ;
+    char row;
+    char col;
+
+    //Data/input
+    printf("Enter highest alphabet : ");
+    scanf("%c", &ch);
+
+    //Processing & output
+    for (row = 'A'; row <= ch; ++row)
+    {
+        for (col = 'A'; col <= row ; ++col)
+            {
+                printf("%c",col);
+            }
+        printf("\n");
+    }
+
+
+    return 0;
+
+}
+/*
+Test run 1
+Enter highest alphabet : F
+A
+AB
+ABC
+ABCD
+ABCDE
+ABCDEF
+
+
+Test run 2
+Enter highest alphabet : J
+A
+AB
+ABC
+ABCD
+ABCDE
+ABCDEF
+ABCDEFG
+ABCDEFGH
+ABCDEFGHI
+ABCDEFGHIJ
+
+Test run 3
+Enter highest alphabet : E
+A
+AB
+ABC
+ABCD
+ABCDE
+*/
+
+
+Question 8
+/*********************************************************/
+/*Lab 3 Question 8                                       */
+/*Name:       Jin Zhou                                   */
+/*Student ID: 1091825                                    */
+/*Date:       10/27/2021                                 */
+/*This Program prints the multiplication table           */
+/*                                                       */
+/*                                                       */
+/*********************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    //Declaration
+    int n,i,product;
+
+    //Data/input
+    printf("Enter the multiplication table for : ");
+    scanf("%d", &n);
+
+    //Processing & output
+    for (i = 0; i<=12;i++)
+    {
+        product = n * i;
+        printf("%d X %d = %d\n", n,i,product);
+    }
+
+
+    return 0;
+
+}
+/*
+Test run 1
+Enter the multiplication table for : 2
+2 X 0 = 0
+2 X 1 = 2
+2 X 2 = 4
+2 X 3 = 6
+2 X 4 = 8
+2 X 5 = 10
+2 X 6 = 12
+2 X 7 = 14
+2 X 8 = 16
+2 X 9 = 18
+2 X 10 = 20
+2 X 11 = 22
+2 X 12 = 24
+
+
+Test run 2
+5 X 0 = 0
+5 X 1 = 5
+5 X 2 = 10
+5 X 3 = 15
+5 X 4 = 20
+5 X 5 = 25
+5 X 6 = 30
+5 X 7 = 35
+5 X 8 = 40
+5 X 9 = 45
+5 X 10 = 50
+5 X 11 = 55
+5 X 12 = 60
+
+Test run 3
+Enter the multiplication table for : 12
+12 X 0 = 0
+12 X 1 = 12
+12 X 2 = 24
+12 X 3 = 36
+12 X 4 = 48
+12 X 5 = 60
+12 X 6 = 72
+12 X 7 = 84
+12 X 8 = 96
+12 X 9 = 108
+12 X 10 = 120
+12 X 11 = 132
+12 X 12 = 144
+*/
+
+
+Question 9
+/*********************************************************/
+/*Lab 3 Question 9                                       */
+/*Name:       Jin Zhou                                   */
+/*Student ID: 1091825                                    */
+/*Date:       10/27/2021                                 */
+/*This Program calculates the sum of digits of           */
+/*entered number                                         */
+/*                                                       */
+/*********************************************************/
+
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    //Declaration
+    int n,q,sum;
+
+    //Data/input
+    printf("Enter the number : ");
+    scanf("%d", &n);
+
+    //Processing & output
+    sum = 0;
+    for (int i = 4; i>=0;i--)
+    {
+        // I add 0.1 here, because I realize that for example
+        // sometimes (int) pow(10, 2) will be 99, sometimes will be 100
+        // So I added 0.1 here to make sure that it will always be more than 100.
+        q = n / (int)(pow(10,i)+0.1);
+        n = n - q *(int)(pow(10,i)+0.1);
+        sum += q;
+    }
+    printf("The sum of its digits : %d\n",sum);
+
+    return 0;
+
+}
+/*
+Test run 1
+Enter the number : 123
+The sum of its digits : 6
+
+
+Test run 2
+Enter the number : 29548
+The sum of its digits : 28
+
+Test run 3
+Enter the number : 25762
+The sum of its digits : 22
+
+
+Question 10
+/**********************************************************/
+/*Lab 3 Question 10                                       */
+/*Name:       Jin Zhou                                    */
+/*Student ID: 1091825                                     */
+/*Date:       10/27/2021                                  */
+/*This Program determines whether the sum of the cubes    */
+/*of three digits of given number is equal to the number  */
+/*itself                                                  */
+/**********************************************************/
+
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    //Declaration
+    int n,first,sec,third,sum;
+
+    //Data/input
+    printf("Enter a number, or -999 to quit : ");
+    scanf("%d", &n);
+
+    //Processing & output
+    sum = 0;
+    while (n !=-999)
+    {
+        first = n / 100;
+        sec = (n - first * 100)/10;
+        third = n % 10;
+        sum = pow(first,3)+pow(sec,3)+pow(third,3);
+        if (sum == n)
+            printf("%d**3 + %d**3 + %d**3 is = %d\n",first,sec,third,n);
+        else
+            printf("%d**3 + %d**3 + %d**3 is not = %d\n",first,sec,third,n);
+
+        printf("\n");
+        printf("Enter a number, or -999 to quit : ");
+        scanf("%d", &n);
+
+    }
+
+    return 0;
+
+}
+/*Test run 1:
+Enter a number, or -999 to quit : 432
+4**3 + 3**3 + 2**3 is not = 432
+
+Enter a number, or -999 to quit : 371
+3**3 + 7**3 + 1**3 is = 371
+
+Enter a number, or -999 to quit : -999
+
+Test run 2:
+Enter a number, or -999 to quit : 145
+1**3 + 4**3 + 5**3 is not = 145
+
+Enter a number, or -999 to quit : 365
+3**3 + 6**3 + 5**3 is not = 365
+
+Enter a number, or -999 to quit : 371
+3**3 + 7**3 + 1**3 is = 371
+
+Enter a number, or -999 to quit : -999
+
+Test run 3:
+Enter a number, or -999 to quit : 100
+1**3 + 0**3 + 0**3 is not = 100
+
+Enter a number, or -999 to quit : 364
+3**3 + 6**3 + 4**3 is not = 364
+
+Enter a number, or -999 to quit : 459
+4**3 + 5**3 + 9**3 is not = 459
+
+Enter a number, or -999 to quit : -999
+*/
